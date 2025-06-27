@@ -9,6 +9,9 @@ import { ClientReviews } from './pages/client/ClientReviews';
 import { ClientSettings } from './pages/client/ClientSettings';
 import { NewOrderPage } from './pages/client/NewOrderPage';
 import { InternDashboard } from './pages/intern/InternDashboard';
+import { InternTasksPage } from './pages/intern/InternTasksPage';
+import { InternEarningsPage } from './pages/intern/InternEarningsPage';
+import { InternSettingsPage } from './pages/intern/InternSettingsPage';
 import { AdminDashboard } from './pages/admin/AdminDashboard';
 
 // Protected route wrapper
@@ -111,6 +114,18 @@ function App() {
           <Route 
             path="/intern" 
             element={<ProtectedRoute element={<InternDashboard />} requiredRole={['intern']} />} 
+          />
+          <Route 
+            path="/intern/tasks" 
+            element={<ProtectedRoute element={<InternTasksPage />} requiredRole={['intern']} />} 
+          />
+          <Route 
+            path="/intern/earnings" 
+            element={<ProtectedRoute element={<InternEarningsPage />} requiredRole={['intern']} />} 
+          />
+          <Route 
+            path="/intern/settings" 
+            element={<ProtectedRoute element={<InternSettingsPage />} requiredRole={['intern']} />} 
           />
           
           {/* Admin routes */}
